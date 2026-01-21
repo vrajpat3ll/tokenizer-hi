@@ -6,3 +6,5 @@ env
 
 # Data: from hindi wikipedia articles
 data
+
+**/__pycache__/**
