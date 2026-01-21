@@ -1,0 +1,7 @@
+[project]
+name = "tokenizer-hi"
+version = "0.1.0"
+description = "Tokenizer for the Hindi language, trained on <some> dataset."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
