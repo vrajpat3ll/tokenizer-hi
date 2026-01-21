@@ -59,8 +59,6 @@ class BPETokenizer:
         return merged
 
     def train(self, sequences):
-        merges = []
-
         for i in range(self.num_merges):
             pair_freq = self.get_pair_frequencies(sequences)
             if not pair_freq:
@@ -77,7 +75,7 @@ class BPETokenizer:
             # if i % 500 == 0:
             print(f"Merge {i}: {best_pair}, ", self._test())
 
-        return self.vocab, merges
+        return self.vocab, self.merges
 
     def apply_merge(self, tokens: List[str], pair: tuple[str, str]) -> List[str]:
         merged = []
