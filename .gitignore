@@ -3,3 +3,6 @@
 .env
 venv
 env
+
+# Data: from hindi wikipedia articles
+data

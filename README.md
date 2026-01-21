@@ -44,3 +44,9 @@ To run any file:
 ```sh
 uv run <file-name>
 ```
+
+## Download Dataset
+
+```sh
+uv run fetch_dataset.py
+```
