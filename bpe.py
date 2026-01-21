@@ -71,6 +71,7 @@ class BPETokenizer:
 
             new_token = best_pair[0] + best_pair[1]
             self.vocab[new_token] = len(self.vocab)
+            self.inverse_vocab[len(self.inverse_vocab)] = new_token
             self.merges.append(best_pair)
 
             # if i % 500 == 0:
@@ -104,7 +105,6 @@ class BPETokenizer:
         # 2. Apply BPE merges IN TRAINING ORDER
         for pair in self.merges:
             tokens = self.apply_merge(tokens, pair)
-        print(tokens)
 
         # 3. Tokens → token IDs
         token_ids = []
@@ -121,8 +121,8 @@ class BPETokenizer:
         text = "भारत एक देश है"
 
         ids = self.encode(text)
-        print(ids)
         decoded = self.decode(ids)
+
         return decoded == text
 
     def decode(self, token_ids: List[int]) -> str:
